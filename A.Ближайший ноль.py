@@ -21,7 +21,9 @@ A. Ближайший ноль
             Ввод:              Вывод:
             6                  0 1 2 3 4 5
             0 7 9 4 8 20
+            
 '''
+
 
 def finds_distanses_to_nearest_zero(houses, zero='0'):
     output = [0] * len(houses)
