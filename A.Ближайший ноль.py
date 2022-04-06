@@ -45,3 +45,5 @@ if __name__ == '__main__':
     input()
     print(*finds_distanses_to_nearest_zero(input().split()))
 
+
+            
