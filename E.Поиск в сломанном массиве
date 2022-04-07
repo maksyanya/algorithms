@@ -1,0 +1,59 @@
+''' 
+E.Поиск в сломанном массиве
+
+Формат ввода:
+            Функция принимает массив натуральных чисел и искомое число k. 
+            Длина массива не превосходит 10000.
+            Элементы массива и число k не превосходят по значению 10000.
+            В примерах:
+                    В первой строке записано число n –— длина массива.
+                    Во второй строке записано положительное число k –— искомый элемент. 
+                    Далее в строку через пробел записано n натуральных чисел – элементы массива.
+                    
+Формат вывода:
+            Функция должна вернуть индекс элемента, равного k, если такой есть в массиве (нумерация с нуля). 
+            Если элемент не найден, функция возвращвет −1.
+            Изменять массив нельзя.
+            
+Пример 1:
+            Ввод:       	              Вывод:
+            9                           6
+            5
+            19 21 100 101 1 4 5 7 12           
+
+
+Пример 2:
+            Ввод:                     	Вывод:
+            2                           1
+            1
+            5 1
+
+'''
+
+
+def broken_search(nums, target) -> int:
+    left=0
+    right = len(nums) - 1
+    while left <= right:
+        left_find = nums[left]
+        right_find = nums[right]
+        if left_find == target:
+            return left
+        if right_find == target:
+            return right
+        middle = (left + right) // 2
+        pivot = nums[middle]
+        if pivot == target:
+            return middle
+        if (left_find < pivot) or (left_find == pivot):
+            if left_find < target < pivot:
+                right = middle - 1
+            else:
+                left = middle + 1
+        else:
+            if (pivot < target < right_find):
+                left = middle + 1
+            else:
+                right = middle - 1
+    return -1
+
