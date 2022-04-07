@@ -66,3 +66,4 @@ def calculating_by_polish(
 
 if __name__ == '__main__':
     print(calculating_by_polish(input().split(' ')))
+
