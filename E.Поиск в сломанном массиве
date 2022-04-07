@@ -56,4 +56,3 @@ def broken_search(nums, target) -> int:
             else:
                 right = middle - 1
     return -1
-
